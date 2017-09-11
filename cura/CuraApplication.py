@@ -96,7 +96,7 @@ if not MYPY:
     try:
         from cura.CuraVersion import CuraVersion, CuraBuildType
     except ImportError:
-        CuraVersion = "master"  # [CodeStyle: Reflecting imported value]
+        CuraVersion = ""  # [CodeStyle: Reflecting imported value]
         CuraBuildType = ""
 
 
