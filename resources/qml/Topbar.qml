@@ -32,57 +32,6 @@ Rectangle
         name:"cura"
     }
 
-    Row
-    {
-        anchors.left: parent.left
-        anchors.leftMargin: UM.Theme.getSize("topbar_logo_right_margin").width
-        anchors.right: machineSelection.left
-        anchors.rightMargin: UM.Theme.getSize("default_margin").width
-        spacing: UM.Theme.getSize("default_margin").width
-
-        ExclusiveGroup { id: sidebarHeaderBarGroup }
-    }
-
-    ComboBox
-    {
-        id: viewModeButton
-        anchors
-        {
-            verticalCenter: parent.verticalCenter
-            right: parent.right
-            rightMargin: UM.Theme.getSize("sidebar").width + UM.Theme.getSize("default_margin").width
-        }
-        style: UM.Theme.styles.combobox
-        visible: !base.monitoringPrint
-
-        model: UM.ViewModel { }
-        textRole: "name"
-
-        onCurrentIndexChanged:
-        {
-            UM.Controller.setActiveView(model.getItem(currentIndex).id);
-
-            // Update the active flag
-            for (var i = 0; i < model.rowCount; ++i)
-            {
-                const is_active = i == currentIndex;
-                model.getItem(i).active = is_active;
-            }
-        }
-
-        currentIndex:
-        {
-            for (var i = 0; i < model.rowCount; ++i)
-            {
-                if (model.getItem(i).active)
-                {
-                    return i;
-                }
-            }
-            return 0;
-        }
-    }
-
     Loader
     {
         id: view_panel
