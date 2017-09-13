@@ -215,7 +215,7 @@ class CuraApplication(QtApplication):
             "LayerView",
             "STLReader",
             "SelectionTool",
-            #"CameraTool",
+            "CameraTool",
             "GCodeWriter",
             "LocalFileOutputDevice",
             "TranslateTool",
