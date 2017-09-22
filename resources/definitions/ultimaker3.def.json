@@ -33,8 +33,8 @@
 
     "overrides": {
         "machine_name": { "default_value": "Ultimaker 3" },
-        "machine_width": { "default_value": 233 },
-        "machine_depth": { "default_value": 215 },
+        "machine_width": { "default_value": 250 },
+        "machine_depth": { "default_value": 200 },
         "machine_height": { "default_value": 200 },
         "machine_heated_bed": { "default_value": true },
         "machine_filament_park_distance": { "value": "machine_heat_zone_length + 26.5" },
