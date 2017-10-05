@@ -12,12 +12,9 @@ import Cura 1.0 as Cura
 Item
 {
     id: base;
-
-    width: buttons.width;
-    height: buttons.height
     property int activeY
 
-    Column
+    Row
     {
         id: buttons;
 

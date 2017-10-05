@@ -16,7 +16,7 @@ Rectangle
     anchors.left: parent.left
     anchors.right: parent.right
     height: UM.Theme.getSize("sidebar_header").height
-    color: base.monitoringPrint ? UM.Theme.getColor("topbar_background_color_monitoring") : UM.Theme.getColor("topbar_background_color")
+    color: UM.Theme.getColor("topbar_background_color")
 
     Behavior on color { ColorAnimation { duration: 100; } }
 
@@ -31,20 +31,18 @@ Rectangle
         id: catalog
         name:"cura"
     }
-
-    Loader
+    Button
     {
-        id: view_panel
-
-        anchors.top: viewModeButton.bottom
-        anchors.topMargin: UM.Theme.getSize("default_margin").height
-        anchors.right: viewModeButton.right
-
-        property var buttonTarget: Qt.point(viewModeButton.x + viewModeButton.width / 2, viewModeButton.y + viewModeButton.height / 2)
-
-        height: childrenRect.height;
-
-        source: UM.ActiveView.valid ? UM.ActiveView.activeViewPanel : "";
+        id: openFileButton;
+        text: catalog.i18nc("@action:button","Add model");
+        iconSource: UM.Theme.getIcon("load")
+        style: UM.Theme.styles.tool_button
+        tooltip: '';
+        anchors
+        {
+            /*left: parent.left;*/
+            horizontalCenter: parent.horizontalCenter;
+        }
+        action: Cura.Actions.open;
     }
-
 }

@@ -319,22 +319,6 @@ UM.MainWindow
                 }
             }
 
-            Button
-            {
-                id: openFileButton;
-                text: catalog.i18nc("@action:button","Open File");
-                iconSource: UM.Theme.getIcon("load")
-                style: UM.Theme.styles.tool_button
-                tooltip: '';
-                anchors
-                {
-                    top: topbar.bottom;
-                    topMargin: UM.Theme.getSize("default_margin").height;
-                    left: parent.left;
-                }
-                action: Cura.Actions.open;
-            }
-
             Toolbar
             {
                 id: toolbar;
@@ -343,9 +327,9 @@ UM.MainWindow
                 property int mouseY: base.mouseY
 
                 anchors {
-                    top: openFileButton.bottom;
+                    bottom: parent.bottom;
                     topMargin: UM.Theme.getSize("window_margin").height;
-                    left: parent.left;
+                    horizontalCenter: parent.horizontalCenter;
                 }
             }
 
@@ -360,20 +344,20 @@ UM.MainWindow
                 onStopMonitoringPrint: base.showPrintMonitor = false
             }
 
-            Sidebar
-            {
-                id: sidebar;
+            /*Sidebar*/
+            /*{*/
+                /*id: sidebar;*/
 
-                anchors
-                {
-                    top: topbar.bottom;
-                    bottom: parent.bottom;
-                    right: parent.right;
-                }
-                z: 1
-                width: UM.Theme.getSize("sidebar").width;
-                monitoringPrint: base.showPrintMonitor
-            }
+                /*anchors*/
+                /*{*/
+                    /*top: topbar.bottom;*/
+                    /*bottom: parent.bottom;*/
+                    /*right: parent.right;*/
+                /*}*/
+                /*z: 1*/
+                /*width: UM.Theme.getSize("sidebar").width;*/
+                /*monitoringPrint: base.showPrintMonitor*/
+            /*}*/
 
             Rectangle
             {
