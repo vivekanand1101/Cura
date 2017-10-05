@@ -165,45 +165,25 @@ UM.MainWindow
             {
                 id: settingsMenu
                 title: catalog.i18nc("@title:menu", "&Settings")
-
-                PrinterMenu { title: catalog.i18nc("@title:menu menubar:toplevel", "&Printer") }
-
-                Instantiator
-                {
-                    model: Cura.ExtrudersModel { simpleNames: true }
-                    Menu {
-                        title: model.name
-                        visible: machineExtruderCount.properties.value > 1
-
-                        NozzleMenu { title: Cura.MachineManager.activeDefinitionVariantsName; visible: Cura.MachineManager.hasVariants; extruderIndex: index }
-                        MaterialMenu { title: catalog.i18nc("@title:menu", "&Material"); visible: Cura.MachineManager.hasMaterials; extruderIndex: index }
-                        ProfileMenu { title: catalog.i18nc("@title:menu", "&Profile"); }
-
-                        MenuSeparator { }
-
-                        MenuItem { text: catalog.i18nc("@action:inmenu", "Set as Active Extruder"); onTriggered: ExtruderManager.setActiveExtruderIndex(model.index) }
-                    }
-                    onObjectAdded: settingsMenu.insertItem(index, object)
-                    onObjectRemoved: settingsMenu.removeItem(object)
-                }
-
-                NozzleMenu { title: Cura.MachineManager.activeDefinitionVariantsName; visible: machineExtruderCount.properties.value <= 1 && Cura.MachineManager.hasVariants }
-                MaterialMenu { title: catalog.i18nc("@title:menu", "&Material"); visible: machineExtruderCount.properties.value <= 1 && Cura.MachineManager.hasMaterials }
-                ProfileMenu { title: catalog.i18nc("@title:menu", "&Profile"); visible: machineExtruderCount.properties.value <= 1 }
-
-                MenuSeparator { }
-
                 MenuItem { action: Cura.Actions.configureSettingVisibility }
             }
 
             Menu
             {
-                id: extension_menu
-                title: catalog.i18nc("@title:menu menubar:toplevel","E&xtensions");
+                title: catalog.i18nc("@title:menu menubar:toplevel","P&references");
+
+                MenuItem { action: Cura.Actions.preferences; }
+            }
+
+            Menu
+            {
+                //: Help menu
+                title: catalog.i18nc("@title:menu menubar:toplevel","&Help");
+                id: help_menu
 
                 Instantiator
                 {
-                    id: extensions
+                    id: help
                     model: UM.ExtensionModel { }
 
                     Menu
@@ -218,35 +198,16 @@ UM.MainWindow
                             MenuItem
                             {
                                 text: model.text
-                                onTriggered: extensions.model.subMenuTriggered(name, model.text)
+                                onTriggered: help.model.subMenuTriggered(name, model.text)
                             }
                             onObjectAdded: sub_menu.insertItem(index, object)
                             onObjectRemoved: sub_menu.removeItem(object)
                         }
                     }
 
-                    onObjectAdded: extension_menu.insertItem(index, object)
-                    onObjectRemoved: extension_menu.removeItem(object)
+                    onObjectAdded: help_menu.insertItem(index, object)
+                    onObjectRemoved: help_menu.removeItem(object)
                 }
-            }
-
-            Menu
-            {
-                title: catalog.i18nc("@title:menu menubar:toplevel","P&references");
-
-                MenuItem { action: Cura.Actions.preferences; }
-            }
-
-            Menu
-            {
-                //: Help menu
-                title: catalog.i18nc("@title:menu menubar:toplevel","&Help");
-
-                MenuItem { action: Cura.Actions.showProfileFolder; }
-                MenuItem { action: Cura.Actions.documentation; }
-                MenuItem { action: Cura.Actions.reportBug; }
-                MenuSeparator { }
-                MenuItem { action: Cura.Actions.about; }
             }
         }
 
