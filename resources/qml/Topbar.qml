@@ -54,7 +54,22 @@ Rectangle
         tooltip: '';
         anchors
         {
+            rightMargin: 20;
             right: base.right;
+        }
+        //action: Cura.Actions.open;
+    }
+    Button
+    {
+        id: cancel_prepare_button;
+        text: catalog.i18nc("@action:button", "Cancel");
+        iconSource: UM.Theme.getIcon("load")
+        style: UM.Theme.styles.tool_button
+        tooltip: 'Cancel';
+        anchors
+        {
+            rightMargin: 20;
+            right: slicebutton.left;
         }
         //action: Cura.Actions.open;
     }
