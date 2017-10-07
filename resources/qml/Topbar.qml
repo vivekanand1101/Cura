@@ -45,4 +45,17 @@ Rectangle
         }
         action: Cura.Actions.open;
     }
+    Button
+    {
+        id: slicebutton;
+        text: catalog.i18nc("@action:button","Slice");
+        iconSource: UM.Theme.getIcon("load")
+        style: UM.Theme.styles.tool_button
+        tooltip: '';
+        anchors
+        {
+            right: base.right;
+        }
+        //action: Cura.Actions.open;
+    }
 }
