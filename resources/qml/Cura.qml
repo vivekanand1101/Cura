@@ -17,24 +17,24 @@ UM.MainWindow
     id: base
     //: Cura application window title
     title: catalog.i18nc("@title:window","Ethereal");
-    viewportRect: Qt.rect(0, 0, (base.width - sidebar.width) / base.width, 1.0)
+    //viewportRect: Qt.rect(0, 0, (base.width - sidebar.width) / base.width, 1.0)
     property bool showPrintMonitor: false
 
-    Connections
-    {
-        target: Printer
-        onShowPrintMonitor:
-        {
-            if (show)
-            {
-                topbar.startMonitoringPrint()
-            }
-            else
-            {
-                topbar.stopMonitoringPrint()
-            }
-        }
-    }
+    //Connections
+    //{
+        //target: Printer
+        //onShowPrintMonitor:
+        //{
+            //if (show)
+            //{
+                //topbar.startMonitoringPrint()
+            //}
+            //else
+            //{
+                //topbar.stopMonitoringPrint()
+            //}
+        //}
+    //}
 
     Component.onCompleted:
     {
@@ -168,6 +168,7 @@ UM.MainWindow
                 MenuItem { action: Cura.Actions.configureSettingVisibility }
             }
 
+<<<<<<< HEAD
             Menu
             {
                 title: catalog.i18nc("@title:menu menubar:toplevel","P&references");
