@@ -31,19 +31,78 @@ Rectangle
         id: catalog
         name:"cura"
     }
-    Button
-    {
-        id: openFileButton;
-        text: catalog.i18nc("@action:button","Add model");
-        iconSource: UM.Theme.getIcon("load")
-        style: UM.Theme.styles.tool_button
-        tooltip: '';
-        anchors
+    //TextArea {
+        //width: 50;
+        //text: "Prepare"
+        //activeFocusOnPress: false
+        //canUndo: false
+
+    //}
+    Row {
+        anchors.horizontalCenter: base.horizontalCenter;
+        Button
         {
-            /*left: parent.left;*/
-            horizontalCenter: parent.horizontalCenter;
+            id: openFileButton;
+            text: catalog.i18nc("@action:button", "Add model");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
         }
-        action: Cura.Actions.open;
+        Button
+        {
+            id: extruderbutton;
+            text: catalog.i18nc("@action:button", "Extruder");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
+        }
+        Button
+        {
+            id: resolutionbutton;
+            text: catalog.i18nc("@action:button", "Resolution");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
+        }
+        Button
+        {
+            id: infillbutton;
+            text: catalog.i18nc("@action:button", "Infill");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
+        }
+        Button
+        {
+            id: wallsbutton;
+            text: catalog.i18nc("@action:button", "Walls");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
+        }
+        Button
+        {
+            id: supportbutton;
+            text: catalog.i18nc("@action:button", "Support");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
+        }
+        Button
+        {
+            id: advancedbutton;
+            text: catalog.i18nc("@action:button", "Advanced");
+            iconSource: UM.Theme.getIcon("load")
+            style: UM.Theme.styles.tool_button
+            tooltip: '';
+            action: Cura.Actions.open;
+        }
     }
     Button
     {
