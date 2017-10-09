@@ -76,9 +76,8 @@ Rectangle
         {
             id: resolutionbutton;
             text: catalog.i18nc("@action:button", "Resolution");
-            iconSource: UM.Theme.getImage("resolution")
             Image {
-                source: UM.Theme.getImage("infill")
+                source: UM.Theme.getImage("resolution")
                 width: infillbutton.width;
                 height: infillbutton.height;
             }
@@ -142,12 +141,18 @@ Rectangle
     Button
     {
         id: slicebutton;
-        text: catalog.i18nc("@action:button","Slice");
-        iconSource: UM.Theme.getImage("slice")
-        style: UM.Theme.styles.tool_button
+        //text: catalog.i18nc("@action:button","Slice");
+        height: base.height/2;
+        width: base.width/15;
+        Image {
+            source: UM.Theme.getImage("slicing")
+            width: slicebutton.width;
+            height: slicebutton.height;
+        }
         tooltip: 'Slice';
         anchors
         {
+            verticalCenter: base.verticalCenter;
             rightMargin: 20;
             right: base.right;
         }
