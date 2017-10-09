@@ -168,7 +168,6 @@ UM.MainWindow
                 MenuItem { action: Cura.Actions.configureSettingVisibility }
             }
 
-<<<<<<< HEAD
             Menu
             {
                 title: catalog.i18nc("@title:menu menubar:toplevel","P&references");
