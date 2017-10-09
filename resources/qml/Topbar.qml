@@ -46,7 +46,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Add model");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Add model';
             action: Cura.Actions.open;
         }
         Button
@@ -55,7 +55,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Extruder");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Extruder';
             action: Cura.Actions.open;
         }
         Button
@@ -64,7 +64,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Resolution");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Resolution';
             action: Cura.Actions.open;
         }
         Button
@@ -73,7 +73,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Infill");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Infill';
             action: Cura.Actions.open;
         }
         Button
@@ -82,7 +82,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Walls");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Walls';
             action: Cura.Actions.open;
         }
         Button
@@ -91,7 +91,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Support");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Support';
             action: Cura.Actions.open;
         }
         Button
@@ -100,7 +100,7 @@ Rectangle
             text: catalog.i18nc("@action:button", "Advanced");
             iconSource: UM.Theme.getIcon("load")
             style: UM.Theme.styles.tool_button
-            tooltip: '';
+            tooltip: 'Advanced';
             action: Cura.Actions.open;
         }
     }
@@ -110,7 +110,7 @@ Rectangle
         text: catalog.i18nc("@action:button","Slice");
         iconSource: UM.Theme.getIcon("load")
         style: UM.Theme.styles.tool_button
-        tooltip: '';
+        tooltip: 'Slice';
         anchors
         {
             rightMargin: 20;
