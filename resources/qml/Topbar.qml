@@ -59,6 +59,11 @@ Rectangle
             tooltip: 'Add model';
             action: Cura.Actions.open;
         }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
         Button
         {
             id: extruderbutton;
@@ -71,6 +76,11 @@ Rectangle
             style: UM.Theme.styles.tool_button
             tooltip: 'Extruder';
             action: Cura.Actions.open;
+        }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
         }
         Button
         {
@@ -85,6 +95,11 @@ Rectangle
             tooltip: 'Resolution';
             action: Cura.Actions.open;
         }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
         Button
         {
             id: infillbutton;
@@ -97,6 +112,11 @@ Rectangle
             style: UM.Theme.styles.tool_button
             tooltip: 'Infill';
             action: Cura.Actions.open;
+        }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
         }
         Button
         {
@@ -111,6 +131,11 @@ Rectangle
             tooltip: 'Walls';
             action: Cura.Actions.open;
         }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
         Button
         {
             id: supportbutton;
@@ -123,6 +148,11 @@ Rectangle
             style: UM.Theme.styles.tool_button
             tooltip: 'Support';
             action: Cura.Actions.open;
+        }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
         }
         Button
         {
@@ -137,6 +167,11 @@ Rectangle
             tooltip: 'Advanced';
             action: Cura.Actions.open;
         }
+    }
+    Item {
+        height: base.height;
+        width: base.height/20;
+        visible: true;
     }
     Button
     {
