@@ -49,7 +49,6 @@ Rectangle
         Button
         {
             id: openFileButton;
-            text: catalog.i18nc("@action:button", "Add model");
             Image {
                 source: UM.Theme.getImage("load")
                 width: infillbutton.width;
@@ -67,7 +66,6 @@ Rectangle
         Button
         {
             id: extruderbutton;
-            text: catalog.i18nc("@action:button", "Extruder");
             Image {
                 source: UM.Theme.getImage("extruder")
                 width: infillbutton.width;
@@ -85,7 +83,6 @@ Rectangle
         Button
         {
             id: resolutionbutton;
-            text: catalog.i18nc("@action:button", "Resolution");
             Image {
                 source: UM.Theme.getImage("resolution")
                 width: infillbutton.width;
@@ -103,7 +100,6 @@ Rectangle
         Button
         {
             id: infillbutton;
-            text: catalog.i18nc("@action:button", "Infill");
             Image {
                 source: UM.Theme.getImage("infill")
                 width: infillbutton.width;
@@ -121,7 +117,6 @@ Rectangle
         Button
         {
             id: wallsbutton;
-            text: catalog.i18nc("@action:button", "Walls");
             Image {
                 source: UM.Theme.getImage("walls")
                 width: infillbutton.width;
@@ -139,7 +134,6 @@ Rectangle
         Button
         {
             id: supportbutton;
-            text: catalog.i18nc("@action:button", "Support");
             Image {
                 source: UM.Theme.getImage("support")
                 width: infillbutton.width;
@@ -157,7 +151,6 @@ Rectangle
         Button
         {
             id: advancedbutton;
-            text: catalog.i18nc("@action:button", "Advanced");
             Image {
                 source: UM.Theme.getImage("advanced")
                 width: infillbutton.width;
@@ -176,7 +169,6 @@ Rectangle
     Button
     {
         id: slicebutton;
-        //text: catalog.i18nc("@action:button","Slice");
         height: base.height/2;
         width: base.width/10;
         Image {
