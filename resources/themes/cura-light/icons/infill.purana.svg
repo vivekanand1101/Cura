@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4304 -9267 64 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #444;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 12px;
+        font-family: Roboto-Regular, Roboto;
+      }
+
+      .cls-3, .cls-4, .cls-6 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #777;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-width: 1.5px;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Infill" transform="translate(3376 -9275)">
+    <rect id="Rectangle_869" data-name="Rectangle 869" class="cls-1" width="64" height="56" transform="translate(928 8)"/>
+    <text id="password" class="cls-2" transform="translate(960 55)"><tspan x="-11.177" y="0">Infill</tspan></text>
+    <g id="Group_81" data-name="Group 81" transform="translate(-788 -256)">
+      <line id="Line_171" data-name="Line 171" class="cls-3" y2="24" transform="translate(1744 272)"/>
+      <line id="Line_172" data-name="Line 172" class="cls-3" y2="24" transform="translate(1760 280) rotate(90)"/>
+      <line id="Line_173" data-name="Line 173" class="cls-3" y2="24" transform="translate(1740 272)"/>
+      <line id="Line_174" data-name="Line 174" class="cls-3" y2="24" transform="translate(1760 276) rotate(90)"/>
+      <line id="Line_175" data-name="Line 175" class="cls-3" y2="24" transform="translate(1748 272)"/>
+      <line id="Line_176" data-name="Line 176" class="cls-3" y2="24" transform="translate(1760 284) rotate(90)"/>
+      <line id="Line_177" data-name="Line 177" class="cls-3" y2="24" transform="translate(1752 272)"/>
+      <line id="Line_178" data-name="Line 178" class="cls-3" y2="24" transform="translate(1760 288) rotate(90)"/>
+      <line id="Line_179" data-name="Line 179" class="cls-3" y2="24" transform="translate(1756 272)"/>
+      <line id="Line_180" data-name="Line 180" class="cls-3" y2="24" transform="translate(1760 292) rotate(90)"/>
+      <g id="Rectangle_870" data-name="Rectangle 870" class="cls-4" transform="translate(1736 272)">
+        <rect class="cls-5" width="24" height="24"/>
+        <rect class="cls-6" x="0.75" y="0.75" width="22.5" height="22.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

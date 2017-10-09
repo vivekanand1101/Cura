@@ -305,20 +305,20 @@ UM.MainWindow
                 onStopMonitoringPrint: base.showPrintMonitor = false
             }
 
-            /*Sidebar*/
-            /*{*/
-                /*id: sidebar;*/
+            //Sidebar
+            //{
+                //id: sidebar;
 
-                /*anchors*/
-                /*{*/
-                    /*top: topbar.bottom;*/
-                    /*bottom: parent.bottom;*/
-                    /*right: parent.right;*/
-                /*}*/
-                /*z: 1*/
-                /*width: UM.Theme.getSize("sidebar").width;*/
-                /*monitoringPrint: base.showPrintMonitor*/
-            /*}*/
+                //anchors
+                //{
+                    //top: topbar.bottom;
+                    //bottom: parent.bottom;
+                    //right: parent.right;
+                //}
+                //z: 1
+                //width: UM.Theme.getSize("sidebar").width;
+                //monitoringPrint: base.showPrintMonitor
+            //}
 
             Rectangle
             {
