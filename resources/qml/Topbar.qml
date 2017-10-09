@@ -143,7 +143,7 @@ Rectangle
         id: slicebutton;
         //text: catalog.i18nc("@action:button","Slice");
         height: base.height/2;
-        width: base.width/15;
+        width: base.width/10;
         Image {
             source: UM.Theme.getImage("slicing")
             width: slicebutton.width;
