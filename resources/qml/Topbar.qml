@@ -153,18 +153,4 @@ Rectangle
         }
         //action: Cura.Actions.open;
     }
-    Button
-    {
-        id: cancel_prepare_button;
-        text: catalog.i18nc("@action:button", "Cancel");
-        iconSource: UM.Theme.getImage("cancel")
-        style: UM.Theme.styles.tool_button
-        tooltip: 'Cancel';
-        anchors
-        {
-            rightMargin: 20;
-            right: slicebutton.left;
-        }
-        //action: Cura.Actions.open;
-    }
 }
