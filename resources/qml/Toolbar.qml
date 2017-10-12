@@ -11,155 +11,104 @@ import Cura 1.0 as Cura
 
 Rectangle
 {
-    id: base;
-    property int activeY
-    //anchors.bottom: parent.bottom;
-    //anchors.fill: parent;
-    //
-    anchors.left: parent.left
-    anchors.right: parent.right
+    id: base
+    anchors.left: parent.left;
+    anchors.right: parent.right;
     height: UM.Theme.getSize("sidebar_header").height
-    color: UM.Theme.getColor("topbar_background_color")
-
-    Row
+    color: UM.Theme.getColor("toolbar_background_color")
+    UM.I18nCatalog
     {
-        id: buttons;
-
-        anchors.bottom: parent.bottom;
-        anchors.horizontalCenter: parent.horizontalCenter;
-    //    anchors.left: parent.left;
-        spacing: UM.Theme.getSize("button_lining").width
-
-        Repeater
-        {
-            id: repeat
-
-            model: UM.ToolModel { }
-
-            Button
-            {
-                text: model.name
-                iconSource:
-                {
-                    var result = UM.Theme.getIcon(model.icon)
-                    if(result == "")
-                    {
-                        return model.location + "/" + model.icon
-                    }
-                    return result
-                }
-
-                checkable: true;
-                checked: model.active;
-                enabled: model.enabled && UM.Selection.hasSelection && UM.Controller.toolsEnabled;
-
-                style: UM.Theme.styles.tool_button;
-                onCheckedChanged:
-                {
-                    if(checked)
-                    {
-                        base.activeY = y
-                    }
-                }
-                //Workaround since using ToolButton"s onClicked would break the binding of the checked property, instead
-                //just catch the click so we do not trigger that behaviour.
-                MouseArea
-                {
-                    anchors.fill: parent;
-                    onClicked:
-                    {
-                        forceActiveFocus() //First grab focus, so all the text fields are updated
-                        if(parent.checked)
-                        {
-                            UM.Controller.setActiveTool(null)
-                        }
-                        else
-                        {
-                            UM.Controller.setActiveTool(model.id);
-                        }
-                    }
-                }
-            }
-        }
-
-        Item { height: UM.Theme.getSize("default_margin").height; width: 1; visible: extruders.count > 0 }
-
-        Repeater
-        {
-            id: extruders
-            property var _model: Cura.ExtrudersModel { id: extrudersModel }
-            model: _model.items.length > 1 ? _model : 0
-            ExtruderButton { extruder: model }
-        }
+        id: catalog
+        name:"cura"
     }
 
-    UM.PointingRectangle
-    {
-        id: panelBorder;
+    Row {
+        anchors.bottom: base.bottom
+        anchors.horizontalCenter: base.horizontalCenter
 
-        anchors.left: parent.right;
-        anchors.leftMargin: UM.Theme.getSize("default_margin").width;
-        anchors.top: base.top;
-        anchors.topMargin: base.activeY
-        z: buttons.z -1
-
-        target: Qt.point(parent.right, base.activeY +  UM.Theme.getSize("button").height/2)
-        arrowSize: UM.Theme.getSize("default_arrow").width
-
-        width:
+        Button
         {
-            if (panel.item && panel.width > 0){
-                 return Math.max(panel.width + 2 * UM.Theme.getSize("default_margin").width)
+            id: duplicateButton
+            Image {
+                source: UM.Theme.getImage("duplicate")
+                width: infillbutton.width
+                height: infillbutton.height
             }
-            else {
-                return 0
+            style: UM.Theme.styles.tool_button
+            tooltip: 'Duplicate model'
+            //action: Cura.Actions.open
+        }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
+        Button
+        {
+            id: mirrorButton
+            Image {
+                source: UM.Theme.getImage("mirror")
+                width: infillbutton.width
+                height: infillbutton.height
             }
+            style: UM.Theme.styles.tool_button
+            tooltip: 'Mirror'
+            //action: Cura.Actions.open
         }
-        height: panel.item ? panel.height + 2 * UM.Theme.getSize("default_margin").height : 0;
-
-        opacity: panel.item && panel.width > 0 ? 1 : 0
-        Behavior on opacity { NumberAnimation { duration: 100 } }
-
-        color: UM.Theme.getColor("tool_panel_background")
-        borderColor: UM.Theme.getColor("lining")
-        borderWidth: UM.Theme.getSize("default_lining").width
-
-        MouseArea //Catch all mouse events (so scene doesnt handle them)
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
+        Button {
+            id: moveButton
+            Image {
+                source: UM.Theme.getImage("move")
+                width: infillbutton.width
+                height: infillbutton.height
+            }
+            style: UM.Theme.styles.tool_button
+            tooltip: 'Move'
+            //action: Cura.Actions.open
+        }
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
+        Button
         {
-            anchors.fill: parent
+            id: rotateButton
+            Image {
+                source: UM.Theme.getImage("rotate")
+                width: infillbutton.width
+                height: infillbutton.height
+            }
+            style: UM.Theme.styles.tool_button
+            tooltip: 'Rotate'
+            //action: Cura.Actions.open
         }
-
-        Loader
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
+        }
+        Button
         {
-            id: panel
-
-            x: UM.Theme.getSize("default_margin").width;
-            y: UM.Theme.getSize("default_margin").height;
-
-            source: UM.ActiveTool.valid ? UM.ActiveTool.activeToolPanel : "";
-            enabled: UM.Controller.toolsEnabled;
+            id: scaleButton
+            Image {
+                source: UM.Theme.getImage("scale")
+                width: infillbutton.width
+                height: infillbutton.height
+            }
+            style: UM.Theme.styles.tool_button
+            tooltip: 'Scale'
+            //action: Cura.Actions.open
         }
-    }
-
-    // This rectangle displays the information about the current angle etc. when
-    // dragging a tool handle.
-    Rectangle
-    {
-        x: -base.x + base.mouseX + UM.Theme.getSize("default_margin").width
-        y: -base.y + base.mouseY + UM.Theme.getSize("default_margin").height
-
-        width: toolHint.width + UM.Theme.getSize("default_margin").width
-        height: toolHint.height;
-        color: UM.Theme.getColor("tooltip")
-        Label
-        {
-            id: toolHint
-            text: UM.ActiveTool.properties.getValue("ToolHint") != undefined ? UM.ActiveTool.properties.getValue("ToolHint") : ""
-            color: UM.Theme.getColor("tooltip_text")
-            font: UM.Theme.getFont("default")
-            anchors.horizontalCenter: parent.horizontalCenter
+        Item {
+            height: base.height;
+            width: base.height/20;
+            visible: true;
         }
-
-        visible: toolHint.text != "";
     }
 }
