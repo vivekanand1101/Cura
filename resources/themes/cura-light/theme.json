@@ -69,10 +69,15 @@
 
         "topbar_background_color": [10, 10, 10, 255],
         "topbar_background_color_monitoring": [255, 255, 255, 255],
+        "toolbar_background_color": [10, 10, 10, 255],
+        "toolbar_background_color_monitoring": [255, 255, 255, 255],
 
         "topbar_button_text_active": [0, 0, 0, 255],
         "topbar_button_text_inactive": [128, 128, 128, 255],
         "topbar_button_text_hovered": [0, 0, 0, 255],
+        "toolbar_button_text_active": [0, 0, 0, 255],
+        "toolbar_button_text_inactive": [128, 128, 128, 255],
+        "toolbar_button_text_hovered": [0, 0, 0, 255],
         "logo_background_color": [255, 255, 255, 255],
 
         "text": [0, 0, 0, 255],
@@ -330,6 +335,9 @@
         "topbar_logo_right_margin": [3, 0],
         "topbar_button": [8, 4],
         "topbar_button_icon": [1.2, 1.2],
+        "toolbar_logo_right_margin": [3, 0],
+        "toolbar_button": [8, 4],
+        "toolbar_button_icon": [1.2, 1.2],
 
         "button_tooltip": [1.0, 1.3],
         "button_tooltip_arrow": [0.25, 0.25],
